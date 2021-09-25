@@ -8,49 +8,26 @@ import {
 } from "@expo/vector-icons";
 import pic4 from "../assets/raf.jpg";
 
-function BlogDetails({text,readtime,author,image,title}) {
+function BlogDetails({ route, text, readtime, author, image, title }) {
+  console.log();
+
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
       style={styles.bdetailsmain}
     >
-      <View style={styles.header}>
-        <View style={styles.headtext}>
-          <Ionicons name="chevron-back" size={32} color="black" />
-          <Text style={styles.htxt}>Programming</Text>
-        </View>
-
-        <View style={styles.headicons}>
-          <MaterialIcons
-            style={styles.hicon1}
-            name="headset"
-            size={32}
-            color="black"
-          />
-          <Feather style={styles.hicon1} name="heart" size={32} color="black" />
-          <AntDesign
-            style={styles.hicon1}
-            name="sharealt"
-            size={32}
-            color="black"
-          />
-        </View>
-      </View>
+      
       <View style={styles.detailscontent}>
-        <Image style={styles.image} source={image} />
-        <Text style={styles.bdtitle}>
-         {title}
-        </Text>
+        <Image style={styles.image} source={route.params.image} />
+        <Text style={styles.bdtitle}>{route.params.title}</Text>
         <View style={styles.favitext}>
           <Image style={styles.favicon} source={pic4} />
-          <Text style={styles.author}>{author}</Text>
+          <Text style={styles.author}>{route.params.author}</Text>
           <Text style={styles.ico}></Text>
-          <Text style={styles.timeread}>{readtime}</Text>
+          <Text style={styles.timeread}>{route.params.readtime}</Text>
         </View>
         <View>
-          <Text style={styles.maintext}>
-         {text}
-          </Text>
+          <Text style={styles.maintext}>{route.params.text}</Text>
         </View>
       </View>
     </ScrollView>
@@ -59,7 +36,6 @@ function BlogDetails({text,readtime,author,image,title}) {
 
 const styles = StyleSheet.create({
   bdetailsmain: {
-    marginTop: 70,
     marginHorizontal: 10,
   },
   header: {
@@ -88,6 +64,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     fontSize: 20,
     lineHeight: 30,
+    justifyContent:"center"
   },
   bdtitle: {
     fontSize: 30,

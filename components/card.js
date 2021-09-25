@@ -2,9 +2,11 @@ import React from "react";
 import { Text, View, StyleSheet, Image,ScrollView, TouchableOpacity } from "react-native";
 import pic2 from "../assets/raf.jpg";
 
-function Card({image,author,title,readtime}) {
+function Card({ image, author, title, readtime, navigation,text }) {
+  
+
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>navigation.push('blogDetails',{author:author,readtime:readtime,title:title,image:image,text:text})}>
     <View style={styles.content}>
       <View>
         <Image style={styles.image} source={image} />

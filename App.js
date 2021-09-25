@@ -4,14 +4,53 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./screens/home";
 import BlogDetails from "./screens/blogDetails";
 import { EvilIcons } from "@expo/vector-icons";
+import {
+  Ionicons,
+  Feather,
+  MaterialIcons,
+  AntDesign,
+} from "@expo/vector-icons";
+import { View } from "react-native";
 
 export default function App() {
   const Stack = createStackNavigator();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-      <Stack.Screen name="blogDetails" component={BlogDetails} />
+      <Stack.Navigator initialRouteName="home">
+        <Stack.Screen
+          options={{
+            title: "Programming",
+            headerTitleAlign: "left",
+            headerTitleStyle:{marginRight:10},
+
+            headerLeft: () => (
+              <Ionicons style={{ marginLeft: 10}} name="chevron-back" size={32} color="black" />
+            ),
+            headerRight: () => (
+              <View style={{flexDirection: "row",}}>
+              <MaterialIcons
+                style={{ marginHorizontal: 5 }}
+                name="headset"
+                size={32}
+                color="black"
+              />
+                <Feather style={{ marginHorizontal: 5 }} name="heart" size={32} color="black" />
+              <AntDesign
+                style={{ marginHorizontal: 5 }}
+                name="sharealt"
+                size={32}
+                color="black"
+              />
+            </View>
+            ),
+          }}
+          name="home"
+          component={Home}
+          name="blogDetails"
+          component={BlogDetails}
+        />
+
         <Stack.Screen
           options={{
             title: "The Tech Guy",
@@ -37,7 +76,6 @@ export default function App() {
           name="home"
           component={Home}
         />
-        
       </Stack.Navigator>
     </NavigationContainer>
   );

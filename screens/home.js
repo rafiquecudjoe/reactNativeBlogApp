@@ -11,25 +11,17 @@ import {
 import { EvilIcons } from "@expo/vector-icons";
 import Card from "../components/card";
 
-function Home({ image, title, author, readtime,navigation }) {
+function Home({ image, title, author, readtime, navigation, text }) {
   const blogPost = [
     {
       image: require("../assets/image1.jpg"),
-      title: ` 5 Ways To Increase Your ${"\n"}Capability as a Software ${"\n"}Engineer`,
+      title: `5 Ways To Increase Your ${"\n"}Capability as a Software ${"\n"}Engineer`,
       author: "Rafique Adam Cudjoe",
       readtime: "4 mins read",
-      text: `   The role of a software engineer is to solve complex
-          problems.Ideally, SEs discover and analyze requirements and employ
-          best practices, design patterns, code, runtimes, frameworks, APIs,
-          and libraries to deliver simplified yet comprehensive solutions
-          while reducing the potential for future challenges. Sofware
-          engineering as a discipline requires strong critical thinking,
-          attention to detail, coding proficiency, and discipline to maintain
-          a constant learning rate. Knowledge and experience distinguish SEs,
-          yet the constituting number of roles or projects often varies.{"\n"}
-          Improving as an SE requires expanding both of these areas. Here I’ve
-          included several practices and areas I’ve found to be highly
-          effective for immediate improvement.`,
+      text: `The role of a software engineer is to solve complex problems. Ideally, SEs discover and analyze requirements and employ best practices, design patterns, code, runtimes, frameworks, APIs, and libraries to deliver simplified yet comprehensive solutions while reducing the potential for future challenges.
+      Sofware engineering as a discipline requires strong critical thinking, attention to detail, coding proficiency, and discipline to maintain a constant learning rate.
+      Knowledge and experience distinguish SEs, yet the constituting number of roles or projects often varies. Improving as an SE requires expanding both of these areas.Here I’ve included several practices and areas I’ve found to be highly effective for immediate improvement, respectively.
+      `,
       id: "1",
     },
     {
@@ -73,6 +65,8 @@ function Home({ image, title, author, readtime,navigation }) {
               title={item.title}
               author={item.author}
               readtime={item.readtime}
+              navigation={navigation}
+              text={item.text}
             />
           );
         }}
