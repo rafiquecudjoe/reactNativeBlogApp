@@ -1,21 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Home from "./screens/home";
+import BlogDetails from "./screens/blogDetails";
+import { EvilIcons } from "@expo/vector-icons";
 
 export default function App() {
+  const Stack = createStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+      <Stack.Screen name="blogDetails" component={BlogDetails} />
+        <Stack.Screen
+          options={{
+            title: "The Tech Guy",
+            headerTitleAlign: "center",
+
+            headerLeft: () => (
+              <EvilIcons
+                style={{ marginLeft: 20 }}
+                name="navicon"
+                size={40}
+                color="black"
+              />
+            ),
+            headerRight: () => (
+              <EvilIcons
+                style={{ marginRight: 20 }}
+                name="search"
+                size={30}
+                color="black"
+              />
+            ),
+          }}
+          name="home"
+          component={Home}
+        />
+        
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
