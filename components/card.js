@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet, Image,ScrollView, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import pic2 from "../assets/raf.jpg";
 
 function Card({ image, author, title, readtime, navigation,text }) {

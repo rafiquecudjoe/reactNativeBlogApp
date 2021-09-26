@@ -11,6 +11,7 @@ import {
   AntDesign,
 } from "@expo/vector-icons";
 import { View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -25,23 +26,24 @@ export default function App() {
             headerTitleStyle:{marginRight:10},
 
             headerLeft: () => (
-              <Ionicons style={{ marginLeft: 10}} name="chevron-back" size={32} color="black" />
+              <TouchableOpacity><Ionicons style={{ marginLeft: 10}} name="chevron-back" size={32} color="black" /></TouchableOpacity>
+              
             ),
             headerRight: () => (
               <View style={{flexDirection: "row",}}>
-              <MaterialIcons
+              <TouchableOpacity><MaterialIcons
                 style={{ marginHorizontal: 5 }}
                 name="headset"
                 size={32}
                 color="black"
-              />
-                <Feather style={{ marginHorizontal: 5 }} name="heart" size={32} color="black" />
-              <AntDesign
+              /></TouchableOpacity>
+                <TouchableOpacity><Feather style={{ marginHorizontal: 5 }} name="heart" size={32} color="black" /></TouchableOpacity>
+                <TouchableOpacity><AntDesign
                 style={{ marginHorizontal: 5 }}
                 name="sharealt"
                 size={32}
                 color="black"
-              />
+              /></TouchableOpacity>
             </View>
             ),
           }}
@@ -57,20 +59,20 @@ export default function App() {
             headerTitleAlign: "center",
 
             headerLeft: () => (
-              <EvilIcons
-                style={{ marginLeft: 20 }}
-                name="navicon"
-                size={40}
-                color="black"
-              />
+              <TouchableOpacity><EvilIcons
+              style={{ marginLeft: 20 }}
+              name="navicon"
+              size={40}
+              color="black"
+            /></TouchableOpacity>
             ),
             headerRight: () => (
-              <EvilIcons
-                style={{ marginRight: 20 }}
-                name="search"
-                size={30}
-                color="black"
-              />
+              <TouchableOpacity><EvilIcons
+              style={{ marginRight: 20 }}
+              name="search"
+              size={30}
+              color="black"
+            /></TouchableOpacity>
             ),
           }}
           name="home"
