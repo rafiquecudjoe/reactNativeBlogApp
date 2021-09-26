@@ -29,12 +29,26 @@ function Home({ image, title, author, readtime, navigation, text }) {
       title: `No Matter Where You Are${"\n"}You Can Always Grow as${"\n"}a Developer`,
       author: "Rafique Adam Cudjoe",
       readtime: "5 mins read",
+      text: `For web developers, a personal portfolio page is like a resume. Instead of listing your skills on a resume in the traditional way, you can prove your competence with a personal portfolio.
+      When people or potential employers see your portfolio, they can get a glimpse of your skills. Thus, online portfolios are a great way to showcase your work and skills.
+      However, creating an online portfolio is not straightforward for everyone. For example, you might struggle with questions such as:
+      What should I add to my portfolio?
+      How should I structure it?
+      What technologies should I use to build it?
+      As a result, I want to help you answer any questions you might have. In this article, you can see my favourite web developer portfolios from the internet. Hopefully, they will answer your questions and inspire you to create your online portfolio.`,
       id: "2",
     },
     {
       image: require("../assets/image3.jpeg"),
       title: `14 Best Web Developer${"\n"}Portfolios To Get Inspiration`,
       author: "Rafique Adam Cudjoe",
+      text: `For web developers, a personal portfolio page is like a resume. Instead of listing your skills on a resume in the traditional way, you can prove your competence with a personal portfolio.
+      When people or potential employers see your portfolio, they can get a glimpse of your skills. Thus, online portfolios are a great way to showcase your work and skills.
+      However, creating an online portfolio is not straightforward for everyone. For example, you might struggle with questions such as:
+      What should I add to my portfolio?
+      How should I structure it?
+      What technologies should I use to build it?
+      As a result, I want to help you answer any questions you might have. In this article, you can see my favourite web developer portfolios from the internet. Hopefully, they will answer your questions and inspire you to create your online portfolio.`,
       readtime: "6 mins read",
       id: "3",
     },
@@ -43,6 +57,13 @@ function Home({ image, title, author, readtime, navigation, text }) {
       title: `How To Use Selenium To${"\n"}Automate Any Website`,
       author: "Rafique Adam Cudjoe",
       readtime: "7 mins read",
+      text: `For web developers, a personal portfolio page is like a resume. Instead of listing your skills on a resume in the traditional way, you can prove your competence with a personal portfolio.
+      When people or potential employers see your portfolio, they can get a glimpse of your skills. Thus, online portfolios are a great way to showcase your work and skills.
+      However, creating an online portfolio is not straightforward for everyone. For example, you might struggle with questions such as:
+      What should I add to my portfolio?
+      How should I structure it?
+      What technologies should I use to build it?
+      As a result, I want to help you answer any questions you might have. In this article, you can see my favourite web developer portfolios from the internet. Hopefully, they will answer your questions and inspire you to create your online portfolio.`,
       id: "4",
     },
     {
@@ -50,13 +71,21 @@ function Home({ image, title, author, readtime, navigation, text }) {
       title: `Rethinking the 80/20 Rule in${"\n"}Software Development`,
       author: "Rafique Adam Cudjoe",
       readtime: "8 mins read",
+      text: `For web developers, a personal portfolio page is like a resume. Instead of listing your skills on a resume in the traditional way, you can prove your competence with a personal portfolio.
+      When people or potential employers see your portfolio, they can get a glimpse of your skills. Thus, online portfolios are a great way to showcase your work and skills.
+      However, creating an online portfolio is not straightforward for everyone. For example, you might struggle with questions such as:
+      What should I add to my portfolio?
+      How should I structure it?
+      What technologies should I use to build it?
+      As a result, I want to help you answer any questions you might have. In this article, you can see my favourite web developer portfolios from the internet. Hopefully, they will answer your questions and inspire you to create your online portfolio.`,
       id: "5",
     },
   ];
 
   return (
-    <View style={styles.main}>
+    <View showsVerticalScrollIndicator={false} style={styles.main}>
       <FlatList
+        showsVerticalScrollIndicator={false}
         data={blogPost}
         renderItem={({ item }) => {
           return (
